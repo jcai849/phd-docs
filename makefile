@@ -9,7 +9,7 @@ plantuml.jar:
 	tail -n1 |\
 	xargs curl -sLo plantuml.jar
 
-.SUFFIXES: .html .md .tikz .svg .gv .puml
+.SUFFIXES: .html .md .svg .gv .puml
 .md.html:
 	pandoc -F pandoc-crossref -NCst html5 metadata.yaml ${.IMPSRC} >${.TARGET}
 .puml.svg: plantuml.jar
